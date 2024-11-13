@@ -14,6 +14,7 @@ If ($null -eq $PublicDesktopIcon) {
     Write-Output 'Icon found.'
     Exit 0
 }
+
 <#
 .SYNOPSIS
     Create a Public Desktop Internet Shortcut from embedded .ico File
