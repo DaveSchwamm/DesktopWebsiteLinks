@@ -4,14 +4,14 @@
 #>
 
 # Path to test
-<# $PublicDesktopIcon = ( Get-Item -Path "$($ENV:PUBLIC)\Desktop\YOURLINKHERE.lnk" ) #>
+$PublicDesktopIcon = ( Get-Item -Path "$($ENV:PUBLIC)\Desktop\YOURLINKHERE.lnk" ) #>
 
 # Perform detection
 
-<# If ($null -eq $PublicDesktopIcon) {
+If ($null -eq $PublicDesktopIcon) {
     Write-Output 'Icon not found. Throwing detection error!'
     Exit 1
 } Else {
     Write-Output 'Icon found.'
     Exit 0
-} #>
+}
