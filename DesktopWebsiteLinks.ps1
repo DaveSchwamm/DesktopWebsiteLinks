@@ -26,7 +26,7 @@
 
 # This is the .ico file for the shortcut converted to Base64 in order to embed it within the script.
 
-$FileName = '"C:\Users\david.schwammberger\Downloads\schabi.ico"'
+$FileName = 'C:\Users\david.schwammberger\Downloads\schabi.ico'
 $base64string = [Convert]::ToBase64String([IO.File]::ReadAllBytes($FileName))
 
 # This removes the need for a Network Share to be accessible for the icons to display.
@@ -36,7 +36,7 @@ $ICOBase64 = $base64string
 $ICOContent = [System.Convert]::FromBase64String($ICOBase64)
 
 # Place the decoded icon into the Public Pictures directory so all accounts on the device can access it.
-Set-Content -Path "$($ENV:PUBLIC)\Pictures\schabi.ico" -Value $ICOContent -Encoding Byte
+Set-Content -Path "$($ENV:PUBLIC)\Pictures\schabi.ico" -Value $ICOContent -Encoding oem
 
 # Set the icon file to read-only in order to prevent removal/changes without Local Administrator rights
 Set-ItemProperty -Path "$($ENV:PUBLIC)\Pictures\schabi.ico" -Name IsReadOnly -Value $true
