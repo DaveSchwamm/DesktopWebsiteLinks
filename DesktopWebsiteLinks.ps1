@@ -22,7 +22,7 @@ Set-ItemProperty -Path "$($ENV:PUBLIC)\Pictures\THEICON.ico" -Name IsReadOnly -V
 # Create the Internet Shortcut on the Public Desktop using the new icon in Public Pictures for the icon's source. Edit as-needed.
 $WshShell = New-Object -ComObject WScript.Shell
 # Use .lnk even if the file is .url as you cannot set ItemLocation for .url files!
-$Shortcut = $WshShell.CreateShortcut("$($ENV:PUBLIC)\Desktop\THEICON.lnk")
+$Shortcut = $WshShell.CreateShortcut("$($ENV:PUBLIC)\Desktop\THEWEBSITENAME.lnk")
 $Shortcut.TargetPath = 'WEBSEITE'
 $Shortcut.IconLocation = "$($ENV:PUBLIC)\Pictures\THEICON.ico"
 $Shortcut.Save()
